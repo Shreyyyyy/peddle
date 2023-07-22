@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".phase_4"
+    android:background="@drawable/login_bg">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:onClick="back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#66000000"
+        android:src="@drawable/back"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:fontFamily="serif-monospace"
+        android:text="LOGIN PAGE"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:background="#A8E6E0E0"
+        android:backgroundTint="#121111"
+        android:drawableStart="@drawable/person"
+        android:drawablePadding="10dp"
+        android:fontFamily="serif-monospace"
+        android:hint="username"
+        android:textColor="#DFF3EFEF"
+        android:textColorHint="@color/white"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="#A8E6E0E0"
+        android:backgroundTint="#121111"
+        android:drawableStart="@drawable/pass"
+        android:drawablePadding="10dp"
+        android:fontFamily="serif-monospace"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColor="#DFF3EFEF"
+        android:textColorHint="@color/white"
+        android:textSize="25dp" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#3B000000"
+        android:src="@drawable/home"
+        android:onClick="home"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <ImageButton
+        android:id="@+id/show_pass_btn"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/username"
+        android:layout_alignRight="@+id/password"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#00121111"
+        android:onClick="showHideBtn"
+        android:src="@drawable/eye" />
+
+    <Button
+        android:id="@+id/bt_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:background="#006200EE"
+        android:fontFamily="sans-serif"
+        android:onClick="performResetPassword"
+        android:text="Reset Password"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="18sp" />
+`
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#7E000000"
+        android:fontFamily="serif"
+        android:text="LOGIN"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:background="#006200EE"
+        android:fontFamily="sans-serif"
+        android:onClick="performResetPassword"
+        android:text="Sign up Page"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".scanner_page">
+
+        <com.budiyev.android.codescanner.CodeScannerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scanner_view"
+            app:autoFocusButtonColor="@android:color/white"
+            app:autoFocusButtonVisible="true"
+            app:flashButtonColor="@android:color/white"
+            app:flashButtonVisible="true"
+            app:maskColor="#6C000000"/>
+
+
+
+        <ImageButton
+            android:id="@+id/back"
+            android:onClick="back"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#66000000"
+            android:src="@drawable/back"
+            android:layout_marginTop="650dp"
+            android:layout_marginRight="7dp"/>
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#3B000000"
+            android:src="@drawable/home"
+            android:onClick="home"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="650dp"
+            android:layout_marginRight="7dp"/>
+
+</RelativeLayout>

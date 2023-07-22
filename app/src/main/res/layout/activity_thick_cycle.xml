@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".thick_cycle">
+
+    <ImageView
+        android:id="@+id/face"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/thick_cycle" />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:background="#1E161717"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/face"
+
+        android:layout_marginLeft="40dp">
+
+        <TableRow
+            android:background="#1E161717"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:text="TYPE : "
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"/>
+
+            <TextView
+                android:text="THICK CYCLE"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"/>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#1E161717"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:text="PRICE:"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"/>
+
+            <TextView
+                android:text="1000/- WEEK"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"/>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#1E161717"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:text="OILING: "
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"/>
+
+            <TextView
+                android:text="FIRST 7 FREE"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#1E161717"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="LOCK:  "
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="25/- WEEK"
+                android:textSize="30dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#1E161717"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="TOTAL:  "
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="1025/- Inc. tax"
+                android:textSize="30dp" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+    <Button
+        android:id="@+id/rent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/table"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:text="RENT"
+        android:textSize="25dp" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#B0000000"
+        android:src="@drawable/home"
+        android:onClick="home"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <ImageButton
+        android:id="@+id/back"
+        android:onClick="back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#BA000000"
+        android:src="@drawable/back"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+</RelativeLayout>

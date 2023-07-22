@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".your_detail"
+    android:background="@drawable/cycle1">
+
+    <ImageButton
+        android:id="@+id/home"
+        android:onClick="home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#3B000000"
+        android:src="@drawable/home"
+        android:layout_marginLeft="360dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="serif-monospace"
+        android:text="YOUR DETAIL"
+        android:textColor="#EAD9D9"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/table"
+
+        android:background="#28070707"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp">
+
+        <TableRow
+            android:background="#1E161717"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:textStyle="bold"
+                android:text="FIRST NAME : "
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"/>
+
+            <TextView
+                android:id="@+id/first_name"
+                android:text="SHREYANS"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"/>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#1E161717"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:textStyle="bold"
+                android:text="LAST NAME:"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"/>
+
+            <TextView
+                android:id="@+id/last_name"
+                android:text="JAIN"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"/>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#1E161717"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:textStyle="bold"
+                android:text="PHONE: "
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"/>
+
+            <TextView
+                android:id="@+id/phone_num"
+                android:text="9958510891"
+                android:textSize="23dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#1E161717"
+            android:padding="5dp">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="EMAIL:  "
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/username1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:textColor="@color/white"
+                android:text="jain.shreyans001@gmail.com"
+                android:textSize="15dp"/>
+
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

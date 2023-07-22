@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".phase_2"
+    android:background="@drawable/cycle2">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:onClick="back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#97000000"
+        android:src="@drawable/back"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#65000000"
+        android:src="@drawable/home"
+        android:layout_marginLeft="340dp"
+        android:onClick="home"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <Button
+        android:id="@+id/login"
+        android:onClick="login"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="#7E000000"
+        android:fontFamily="serif-monospace"
+        android:text="LOGIN"
+        android:textSize="36dp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/register1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="register"
+        android:backgroundTint="#86000000"
+        android:fontFamily="serif-monospace"
+        android:text="REGISTER"
+        android:textColor="@color/white"
+        android:textSize="36dp" />
+
+
+</RelativeLayout>

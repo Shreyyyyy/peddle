@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TypeS"
+    android:background="@drawable/types1">
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#3B000000"
+        android:src="@drawable/home"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="5dp"
+        android:onClick="home"
+        android:layout_marginRight="7dp"/>
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="70dp"
+        android:background="#37E6DFDF"
+        android:fontFamily="serif-monospace"
+        android:text="TYPES"
+        android:textColor="#0B0A0A"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:background="#5B000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THICK"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_below="@+id/thick_cycle"
+        android:layout_marginLeft="60dp"/>
+
+    <ImageButton
+        android:id="@+id/modern_cycle"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/head"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="fitXY"
+        android:alpha="0.9"
+        android:backgroundTint="#33000000"
+        android:src="@drawable/modern_cycle"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <ImageButton
+        android:id="@+id/old_cycle"
+        android:layout_below="@+id/head"
+        android:layout_width="200dp"
+        android:layout_height="152dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="230dp"
+        android:backgroundTint="#33000000"
+        android:src="@drawable/old_cycle"
+        android:scaleType="fitXY"
+        tools:layout_editor_absoluteX="37dp"
+        android:alpha="0.9"
+        tools:layout_editor_absoluteY="558dp" />
+
+
+
+    <TextView
+        android:background="#5B000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OLD"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_below="@+id/old_cycle"
+        android:layout_marginLeft="285dp"/>
+
+    <ImageButton
+        android:id="@+id/thick_cycle"
+        android:layout_below="@+id/old_cycle"
+        android:layout_width="160dp"
+        android:layout_height="148dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#33000000"
+        android:src="@drawable/thick_cycle"
+        android:scaleType="fitXY"
+        android:alpha="0.9"
+        tools:layout_editor_absoluteX="277dp"
+        tools:layout_editor_absoluteY="558dp" />
+
+    <ImageButton
+        android:id="@+id/stunt_cycle"
+        android:layout_below="@+id/old_cycle"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginRight="20dp"
+        android:alpha="0.9"
+        android:backgroundTint="#33000000"
+        android:src="@drawable/stunt_cycle"
+        android:scaleType="fitXY"
+        tools:layout_editor_absoluteX="260dp"
+        tools:layout_editor_absoluteY="291dp"/>
+    <TextView
+        android:background="#5B000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STUNT"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_below="@+id/stunt_cycle"
+        android:layout_marginLeft="263dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MODERN"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_below="@+id/modern_cycle"
+        android:layout_marginLeft="50dp"
+        android:background="#5B000000"/>
+
+</RelativeLayout>

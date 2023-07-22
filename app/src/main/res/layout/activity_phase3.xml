@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".phase_3"
+    android:background="@drawable/page3">
+
+
+    <ImageButton
+        android:id="@+id/back"
+        android:onClick="back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#97000000"
+        android:src="@drawable/back"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#8F000000"
+        android:src="@drawable/home"
+        android:layout_marginLeft="340dp"
+        android:onClick="home"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <Button
+        android:id="@+id/student"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#7E000000"
+        android:fontFamily="serif-monospace"
+        android:text="STUDENT"
+        android:textSize="36dp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/faculty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#7E000000"
+        android:textColor="@color/white"
+        android:fontFamily="serif-monospace"
+        android:text="FACULTY"
+        android:textSize="36dp"
+        android:textStyle="italic" />
+
+</RelativeLayout>

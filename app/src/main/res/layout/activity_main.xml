@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cycle1"
+    tools:context=".MainActivity">
+
+
+    <ImageButton
+        android:id="@+id/info"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"
+        android:backgroundTint="#3B000000"
+        android:onClick="info"
+        android:src="@drawable/person" />
+
+    <ImageButton
+        android:id="@+id/order"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="9dp"
+        android:backgroundTint="#3B000000"
+        android:onClick="order"
+        android:src="@drawable/bag" />
+
+
+    <ImageButton
+        android:id="@+id/barcode"
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginRight="9dp"
+        android:backgroundTint="#3B000000"
+        android:onClick="scan"
+        android:src="@drawable/scanner"
+        android:value="barcode" />
+
+
+    <Button
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:backgroundTint="#09090B"
+        android:fontFamily="serif-monospace"
+        android:onClick="welcome"
+        android:rotationY="30"
+        android:text="PEDDLE"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#EFEEEE"
+        android:textSize="50dp"
+        android:textStyle="bold|italic" />
+
+</RelativeLayout>

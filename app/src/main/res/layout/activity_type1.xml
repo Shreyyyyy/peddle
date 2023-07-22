@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".type_1"
+    android:background="@drawable/payment_bg">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="#4D121111"
+        android:fontFamily="serif-monospace"
+        android:text="PAYMENT"
+        android:textColor="#EDE5E5"
+        android:textSize="60dp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:onClick="back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#66000000"
+        android:src="@drawable/back"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <Button
+        android:id="@+id/paytm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#4D000000"
+        android:padding="10dp"
+        android:onClick="paytm"
+        android:textColor="@color/white"
+        android:text="PAYTM"
+        android:textSize="30dp"
+        android:textStyle="italic" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:onClick="home"
+        android:layout_height="70dp"
+        android:backgroundTint="#59000000"
+        android:src="@drawable/home"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="7dp"/>
+
+    <Button
+        android:id="@+id/gpay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paytm"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#4D000000"
+        android:padding="10dp"
+        android:onClick="gpay"
+        android:textColor="@color/white"
+        android:text="GOOGLE PAY"
+        android:textSize="30dp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/phone_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gpay"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#4D000000"
+        android:padding="10dp"
+        android:onClick="phone_pay"
+        android:text="PHONE PAY"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="italic" />
+
+
+
+
+</RelativeLayout>

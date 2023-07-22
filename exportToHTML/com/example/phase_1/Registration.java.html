@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>Registration.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Registration.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.phase_1</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.app.ProgressDialog</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.content.SharedPreferences</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.text.method.HideReturnsTransformationMethod</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.text.method.PasswordTransformationMethod</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.text.method.TransformationMethod</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ImageButton</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ImageView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ProgressBar</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.phase_1.databinding.ActivityMainBinding</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.phase_1.databinding.ActivityRegistrationBinding</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.android.gms.tasks.OnFailureListener</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.android.gms.tasks.OnSuccessListener</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.firebase.auth.AuthResult</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.firebase.auth.FirebaseAuth</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.firebase.firestore.FirebaseFirestore</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Registration </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s1">FirebaseAuth firebaseAuth</span><span class="s0">;</span>
+    <span class="s1">FirebaseFirestore firebaseFirestore</span><span class="s0">;</span>
+    <span class="s1">ActivityRegistrationBinding binding</span><span class="s0">;</span>
+    <span class="s1">ProgressDialog progressDialog</span><span class="s0">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">binding = ActivityRegistrationBinding.inflate(getLayoutInflater())</span><span class="s0">;</span>
+        <span class="s1">setContentView(binding.getRoot())</span><span class="s0">;</span>
+        <span class="s1">firebaseAuth = firebaseAuth.getInstance()</span><span class="s0">;</span>
+        <span class="s1">firebaseFirestore = firebaseFirestore.getInstance()</span><span class="s0">;</span>
+        <span class="s1">progressDialog = </span><span class="s0">new </span><span class="s1">ProgressDialog(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+
+
+        <span class="s1">binding.signup.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+
+                <span class="s1">String firstn = binding.firstName.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String lastn = binding.lastName.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String phonen = binding.phoneNum.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String usern = binding.username1.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String passw = binding.password.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String emailPattern = </span><span class="s2">&quot;[a-zA-Z0-9._-]+@[a-z]+</span><span class="s0">\\</span><span class="s2">.+[a-z]+&quot;</span><span class="s0">;</span>
+
+                <span class="s1">String passwordVal = </span><span class="s2">&quot;^&quot; </span><span class="s1">+</span>
+                        <span class="s3">//&quot;(?=.*[0-9])&quot; +         //at least 1 digit</span>
+                        <span class="s3">//&quot;(?=.*[a-z])&quot; +         //at least 1 lower case letter</span>
+                        <span class="s3">//&quot;(?=.*[A-Z])&quot; +         //at least 1 upper case letter</span>
+                        <span class="s2">&quot;(?=.*[a-zA-Z])&quot; </span><span class="s1">+      </span><span class="s3">//any letter</span>
+                        <span class="s2">&quot;(?=.*[@#$%^&amp;+=])&quot; </span><span class="s1">+    </span><span class="s3">//at least 1 special character</span>
+                        <span class="s2">&quot;(?=</span><span class="s0">\\</span><span class="s2">S+$)&quot; </span><span class="s1">+           </span><span class="s3">//no white spaces</span>
+                        <span class="s2">&quot;.{4,}&quot; </span><span class="s1">+               </span><span class="s3">//at least 4 characters</span>
+                        <span class="s2">&quot;$&quot;</span><span class="s0">;</span>
+                <span class="s1">String val1 = binding.firstName.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String val2 = binding.lastName.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String val3 = binding.phoneNum.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String val4 = binding.username1.getText().toString()</span><span class="s0">;</span>
+                <span class="s1">String val5 = binding.password.getText().toString()</span><span class="s0">;</span>
+
+                <span class="s0">if </span><span class="s1">(val4.isEmpty()) {</span>
+                    <span class="s1">binding.username1.setError(</span><span class="s2">&quot;Field cannot be empty&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(!val4.matches(emailPattern)) {</span>
+                    <span class="s1">binding.username1.setError(</span><span class="s2">&quot;Invalid email address&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+
+                <span class="s0">if </span><span class="s1">(val5.isEmpty()) {</span>
+                    <span class="s1">binding.password.setError(</span><span class="s2">&quot;Field cannot be empty&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(!val5.matches(passwordVal)) {</span>
+                    <span class="s1">binding.password.setError(</span><span class="s2">&quot;Password is too weak&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+
+                <span class="s0">if </span><span class="s1">(val1.isEmpty() || val2.isEmpty() || val3.isEmpty() || val5.isEmpty()) {</span>
+                    <span class="s1">binding.firstName.setError(</span><span class="s2">&quot;Field cannot be empty&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">binding.lastName.setError(</span><span class="s2">&quot;Field cannot be empty&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">binding.phoneNum.setError(</span><span class="s2">&quot;Field cannot be empty&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">binding.password.setError(</span><span class="s2">&quot;Field cannot be empty&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+
+                    <span class="s1">progressDialog.show()</span><span class="s0">;</span>
+                    <span class="s1">firebaseAuth.createUserWithEmailAndPassword(usern</span><span class="s0">, </span><span class="s1">passw)</span>
+                            <span class="s1">.addOnSuccessListener(</span><span class="s0">new </span><span class="s1">OnSuccessListener&lt;AuthResult&gt;() {</span>
+                                <span class="s1">@Override</span>
+                                <span class="s0">public void </span><span class="s1">onSuccess(AuthResult authResult) {</span>
+                                    <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(Registration.</span><span class="s0">this, </span><span class="s1">phase_3.</span><span class="s0">class</span><span class="s1">))</span><span class="s0">;</span>
+                                    <span class="s1">progressDialog.cancel()</span><span class="s0">;</span>
+                                    <span class="s1">firebaseFirestore.collection(</span><span class="s2">&quot;User&quot;</span><span class="s1">)</span>
+                                            <span class="s1">.document(FirebaseAuth.getInstance().getUid())</span>
+                                            <span class="s1">.set(</span><span class="s0">new </span><span class="s1">UserModel(firstn</span><span class="s0">, </span><span class="s1">lastn</span><span class="s0">, </span><span class="s1">phonen</span><span class="s0">, </span><span class="s1">usern))</span><span class="s0">;</span>
+
+                                <span class="s1">}</span>
+                            <span class="s1">})</span>
+                            <span class="s1">.addOnFailureListener(</span><span class="s0">new </span><span class="s1">OnFailureListener() {</span>
+                                <span class="s1">@Override</span>
+                                <span class="s0">public void </span><span class="s1">onFailure(@NonNull Exception e) {</span>
+
+                                    <span class="s1">Toast.makeText(Registration.</span><span class="s0">this, </span><span class="s1">e.getMessage()</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+                                    <span class="s1">progressDialog.cancel()</span><span class="s0">;</span>
+                                <span class="s1">}</span>
+                            <span class="s1">})</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">binding.gotologin.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(Registration.</span><span class="s0">this, </span><span class="s1">phase_4.</span><span class="s0">class</span><span class="s1">))</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">binding.showPassBtn.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s0">if </span><span class="s1">(binding.password.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {</span>
+                    <span class="s1">binding.showPassBtn.setImageResource(R.drawable.hiddeneye)</span><span class="s0">;</span>
+
+                    <span class="s3">//Show Password</span>
+                    <span class="s1">binding.password.setTransformationMethod(HideReturnsTransformationMethod.getInstance())</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">binding.showPassBtn.setImageResource(R.drawable.eye)</span><span class="s0">;</span>
+                    <span class="s3">//Hide Password</span>
+                    <span class="s1">binding.password.setTransformationMethod(PasswordTransformationMethod.getInstance())</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public void </span><span class="s1">home(View view){</span>
+        <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(Registration.</span><span class="s0">this , </span><span class="s1">MainActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">back(View view){</span>
+        <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(Registration.</span><span class="s0">this , </span><span class="s1">phase_2.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+
+</pre>
+</body>
+</html>
